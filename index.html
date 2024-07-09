@@ -7,13 +7,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="navbar">
+      <div class="nav-logo">
+        <h3 class="page-name">Daily Weather</h3>
+      </div>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">City</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+      <i class="fa-solid fa-bars"></i>
+    </div>
     <div class="container">
       <h1>Daily Weather</h1>
-      <div class="search">
-        <input type="text" id="city-input" placeholder="Enter city name" />
-        <button id="search-btn">Search</button>
+      <input type="text" id="cityInput" placeholder="Enter city name" />
+      <button onclick="getWeather()">Get Weather</button>
+      <div id="sortOptions">
+        <label for="sort">Sort By:</label>
+        <select id="sort" onchange="sortWeather()">
+          <option value="date">Date</option>
+          <option value="temp">Temperature</option>
+        </select>
       </div>
-      <div id="weather-info" class="weather-info"></div>
+      <div id="weatherData"></div>
     </div>
     <script src="script.js"></script>
   </body>
